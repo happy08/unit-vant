@@ -1,0 +1,48 @@
+html,body{padding: 0;margin: 0;overflow-x: hidden;;}
+.pdt-0{padding-top: 0px !important;}
+.pdt-5{padding-top: 5px !important;}
+.pdt-10{padding-top: 10px !important;}
+.pdt-15{padding-top: 15px !important;}
+.pdt-46{padding-top: 46px !important;}
+.pdb-0{padding-bottom: 0px !important;}
+.pdb-5{padding-bottom: 5px !important;}
+.pdb-10{padding-bottom: 10px !important;}
+.pdb-15{padding-bottom: 15px !important;}
+.pdb-50{padding-bottom: 50px !important;}
+.pdl-0{padding-left: 0px !important;}
+.pdl-5{padding-left: 5px !important;}
+.pdl-10{padding-left: 10px !important;}
+.pdl-15{padding-left: 15px !important;}
+.pdr-0{padding-right: 0px !important;}
+.pdr-5{padding-right: 5px !important;}
+.pdr-10{padding-right: 10px !important;}
+.pdr-15{padding-right: 15px !important;}
+.pdtb-0{padding-top: 0px !important;padding-bottom: 0px !important;}
+.pdtb-15{padding-top: 5px !important;padding-bottom: 5px !important;}
+.pdtb-10{padding-top: 10px !important;padding-bottom: 10px !important;}
+.pdtb-15{padding-top: 15px !important;padding-bottom: 15px !important;}
+.pdlr-0{padding-left: 0px !important;padding-right: 0px !important;}
+.pdlr-5{padding-left: 5px !important;padding-right: 5px !important;}
+.pdlr-10{padding-left: 10px !important;padding-right: 10px !important;}
+.pdlr-15{padding-left: 15px !important;padding-right: 15px !important;}
+.pd-0{padding: 0px !important;}
+.pd-5{padding: 5px !important;}
+.pd-10{padding: 10px !important;}
+.pd-15{padding: 15px !important;}
+
+
+
+.layout{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    flex-grow: 1;
+    flex-shrink: 1; 
+    overflow-y: scroll;
+    min-height: calc(100vh - 96px);
+    padding: 46px 0 15px 0;
+    background: #f0f0f0; /*必须， 盖住路由切换时的页面*/
+}
