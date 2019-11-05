@@ -50,13 +50,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 .slide-right-enter-active,
 .slide-right-leave-active,
 .slide-left-enter-active,
 .slide-left-leave-active {
   will-change: transform;
-  transition: transform 5000ms;
+  transition: transform 400ms;
   position: fixed;
   top: 0;left: 0;
   z-index: -2;

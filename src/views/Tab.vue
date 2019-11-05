@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main pdb-0">
     <base-header
       title="关于"
       :left-arrow="true"
@@ -8,8 +8,14 @@
     </base-header>
  
        <van-tabs>
-          <van-tab v-for="index in 8" :title="'标签 ' + index" :key="index">
-            内容 {{ index }}
+          <van-tab  @click="onClick" v-for="index in 8" :title="'标签 ' + index" :key="index">
+           
+            <load-data :lists="list" :pagination="pagination" :pull-refresh="true" :get-data="getData" :set-data="setData">
+              <div v-for="item in list" :key="item.id">
+                <div style="height:40px; overflow:hidden">{{item.id}}</div>
+              </div>
+            </load-data>
+
           </van-tab>
         </van-tabs>       
 
@@ -20,33 +26,43 @@
 <script>
 import '@/config/validate'
 import { Tab, Tabs } from 'vant';
+import LoadData from "@/components/LoadData";
 
 export default {
   name: "about",
   data() {
     return {
-       username:'',
-       phone:'',
+      list: [],
+      pagination: {
+        page: 1, //当前页
+        pageSize: 30 //每页n条
+      }
     };
   },
   components: {
+    LoadData,
     [Tab.name]:Tab,
     [Tabs.name]:Tabs
   },
   created() {
   },
   methods: {
-    onSubmit() { console.log('12');
-    
-      // 验证      
-      this.$validator.validateAll().then(result => {
-        if (result) {
-         //axios提交
-        }else{
-         this.$toast( this.errors.items[0].msg)
-        }
-      });
+    onClick(name, title) {
+      this.$toast(title);
+    },
+
+    getData(page) {
+      return this.$api.list(page);
+    },
+    setData(res, refresh) {
+      if (refresh) {  //下拉刷新
+        this.list = res.data;
+      } else {
+        this.list.push(...res.data);
+      }
     }
+
+    
   }
 };
 </script>

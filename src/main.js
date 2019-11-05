@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 //import axios from 'axios'
 import store from './store'
-import './config/rem'
+//import './config/rem'
 import '@/assets/css/public.css';
 import api from './api' // 导入api接口
 
