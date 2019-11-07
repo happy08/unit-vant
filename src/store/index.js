@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tabbarShow:true
+    tabbarShow:true  //是否显示tabbar
   },
   getters:{
     getTabbarShow(state){

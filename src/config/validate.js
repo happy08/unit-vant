@@ -34,7 +34,7 @@ Validator.localize("zh_CN", {
         decimals === "*" ? "" : decimals
       }位小数`,
     digits: (fieldName, [length]) =>
-      `${fieldName}必须是数字，且精确到${length}位数`,
+      `${fieldName}必须是${length}位数字`,
     dimensions: (fieldName, [width, height]) =>
       `${fieldName}必须在${width}像素与${height}像素之间`,
     email: (fieldName) => `${fieldName}不是一个有效的邮箱`,

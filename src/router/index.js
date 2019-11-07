@@ -19,7 +19,7 @@ const routes = [
     name: 'about',
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
     meta: {
-      index:1
+      index:0
     }
   },
   {
@@ -44,6 +44,38 @@ const routes = [
     component: () => import('@/views/Tab.vue'),
     meta: {
       index:1
+    }
+  },
+  {
+    path: '/totop',
+    name: 'totop',
+    component: () => import('@/components/ToTop.vue'),
+    meta: {
+      index:1
+    }
+  },
+  {
+    path: '/countdown',
+    name: 'countdown',
+    component: () => import('@/components/CountDown.vue'),
+    meta: {
+      index:1
+    }
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import('@/views/User.vue'),
+    meta: {
+      index:0
+    }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('@/views/Cart.vue'),
+    meta: {
+      index:0
     }
   },
   

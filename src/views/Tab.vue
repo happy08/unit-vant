@@ -7,7 +7,7 @@
       <div slot="right"> about </div> 
     </base-header>
  
-       <van-tabs>
+       <van-tabs sticky animated swipeable>
           <van-tab  @click="onClick" v-for="index in 8" :title="'标签 ' + index" :key="index">
            
             <load-data :lists="list" :pagination="pagination" :pull-refresh="true" :get-data="getData" :set-data="setData">

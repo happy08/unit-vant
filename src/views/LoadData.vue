@@ -6,9 +6,9 @@
       >
       </base-header>
         
-        <load-data :lists="list" :pagination="pagination" :pull-refresh="true" :get-data="getData" :set-data="setData">
+        <load-data :pagination="pagination" :pull-refresh="true" :get-data="getData" :set-data="setData">
           <div v-for="item in list" :key="item.id">
-            <div style="height:40px; overflow:hidden">{{item.id}}</div>
+            <div style="height:10px; overflow:hidden">{{item.id}}</div>
           </div>
         </load-data>
 

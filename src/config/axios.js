@@ -88,7 +88,7 @@ instance.interceptors.response.use(
       return Promise.reject(response);
     } else {
       // 处理断网的情况
-      console.log('error',error);
+      //console.log('error',error);
       tip('网络异常');
     }
   });

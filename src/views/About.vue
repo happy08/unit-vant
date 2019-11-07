@@ -1,12 +1,15 @@
 <template>
-  <div class="main">
+  <div class="main pdb-50">
     <base-header
       title="关于"
       :left-arrow="true"
     >
-      <div slot="right"> about </div> 
+      <div slot="right"> <van-icon name="close" /> </div> 
     </base-header>
  
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+
+
         <van-cell-group>
           <van-field
             v-model="username"
@@ -23,18 +26,83 @@
             label="手机号"
             placeholder="请输入手机号"
           />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          <van-field
+            v-model="phone"
+            label="手机号"
+            placeholder="请输入手机号"
+          />
+          
         </van-cell-group>
-        
-       
-        <van-button @click="onSubmit" type="primary" size="normal" block round>普通按钮</van-button>
 
-    </div>
+       <div class="pd-15">
+        <van-button @click="onSubmit" type="primary" size="normal" block round>普通按钮</van-button>
+      </div>
+
+ 
+  </van-pull-refresh>
+
+</div>
   
 </template>
 
 <script>
 import '@/config/validate'
-import { Field,cellGroup,Button } from 'vant';
+import { Field,cellGroup,Button,Icon,PullRefresh   } from 'vant';
 
 export default {
   name: "about",
@@ -42,18 +110,30 @@ export default {
     return {
        username:'',
        phone:'',
+
+      count: 0,
+      isLoading: false
+
     };
   },
   components: {
     [Field.name]:Field,
     [Button.name]:Button,
-    [cellGroup.name]:cellGroup    
+    [cellGroup.name]:cellGroup,
+    [Icon.name]:Icon,
+    [PullRefresh.name]:PullRefresh    
   },
   created() {
   },
   methods: {
-    onSubmit() { console.log('12');
-    
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast('刷新成功');
+        this.isLoading = false;
+        this.count++;
+      }, 500);
+    },
+    onSubmit() {    
       // 验证      
       this.$validator.validateAll().then(result => {
         if (result) {

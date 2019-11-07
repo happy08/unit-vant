@@ -1,5 +1,5 @@
 <template>
-  <div class="v-load-data d-flex flex-column">
+  <div>
     <template v-if="pullRefresh">
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <van-list v-model="loading" :finished="finished" finished-text="没有更多了" :error.sync="error" error-text="请求失败，点击重新加载" @load="onLoad(false)">
@@ -18,10 +18,6 @@
 import { PullRefresh, List } from "vant";
 export default {
   props: {
-    lists: {
-      type: [Array, Object, String, Boolean],
-      default: ""
-    },
     pagination: {
       type: Object
     },
@@ -110,7 +106,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .van-pull-refresh .van-list{
-    min-height: calc(100vh - 96px);
+    min-height: calc(100vh - 118px);
   }
 </style>
 
