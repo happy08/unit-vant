@@ -52,11 +52,13 @@ html,body{
 }
 .main {
     flex-grow: 1;
-    flex-shrink: 1;
-    min-height: 100vh;
-    background: #f2f2f2; /*必须， 盖住路由切换时的页面*/
-    padding-top: 66px; 
-    box-sizing: border-box;
+    flex-shrink: 1; 
+    overflow-y: scroll;
+    min-height: calc(100vh - 96px);
+    padding-top: 46px;
+    background: #f0f0f0; /*必须， 盖住路由切换时的页面*/
+    -webkit-overflow-scrolling: touch;
+    /* z-index: 0; */
 }
 
 
