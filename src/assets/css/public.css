@@ -50,6 +50,7 @@ html,body{
     min-height: calc(100vh - 96px);
     padding-top: 46px;
     background: #f0f0f0; /*必须， 盖住路由切换时的页面*/
+    -webkit-overflow-scrolling: touch;
 }
 
 
