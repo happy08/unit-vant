@@ -15,53 +15,47 @@
 </template>
 
 <script>
-import { NavBar,Icon } from "vant";
+import { NavBar, Icon } from "vant";
 
 export default {
-  name:'BaseHeader',
-    props: {
-      title: {
-        type:String,
-        default:''
-      },
-      background: {
-        type:String,
-        default:''
-      },
-      leftText:  {
-        type:String,
-        default:''
-      },
-      leftArrow:  {
-        type:Boolean,
-        default: true
-      },
-      leftLink:  {
-        type:String,
-        default: ''
-      },
-  },
-  data(){
-      return{
-        
-      }
+  name: "BaseHeader",
+  props: {
+    title: {
+      type: String,
+      default: ""
+    },
+    leftText: {
+      type: String,
+      default: ""
+    },
+    leftLink: {
+      type: String,
+      default: ""
+    },
+    leftArrow: {
+      type: Boolean,
+      default: true
+    },
+    background: {
+      type: String,
+      default: ""
+    }
   },
   components: {
     [NavBar.name]: NavBar,
-    [Icon.name]:Icon
+    [Icon.name]: Icon
   },
-  created(){
+  created() {
     //PC版
-     if(this.$unit.device()=='PC'){
-       
-     }
+    if (this.$unit.device() == "PC") {
+    }
   },
   methods: {
     onClickLeft() {
-      if(this.leftLink!=''){
-        this.$router.push(this.leftLink)
-      }else{
-       this.$router.go(-1)
+      if (this.leftLink != "") {
+        this.$router.push(this.leftLink);
+      } else {
+        this.$router.go(-1);
       }
     },
     onClickRight() {
@@ -72,14 +66,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.base-header{
+.base-header {
   position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
 }
-.van-nav-bar{
+.van-nav-bar {
+  background: #f60;
   /* Status bar height on iOS 10 */
   padding-top: 20px;
   /* Status bar height on iOS 11.0 */
@@ -87,13 +82,14 @@ export default {
   /* Status bar height on iOS 11+ */
   padding-top: env(safe-area-inset-top);
 
-  background: url('../assets/img/bg.png');
+  background: url("../assets/img/bg.png");
   background-position: bottom center;
-  background-size: cover
+  background-size: cover;
 }
 
-.van-nav-bar__title,.van-nav-bar .van-icon,.van-nav-bar__right{
+.van-nav-bar__title,
+.van-nav-bar .van-icon,
+.van-nav-bar__right {
   color: #fff;
 }
-
 </style>

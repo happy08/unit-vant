@@ -31,9 +31,11 @@
 .pd-10{padding: 10px !important;}
 .pd-15{padding: 15px !important;}
 .center{text-align: center;}
+.border-box{box-sizing: border-box;}
+
 html,body{
     position: relative;
-    z-index: -3;
+    z-index: 1;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -42,29 +44,42 @@ html,body{
 .layout{
     position: relative;
     min-height: 100vh;
-    /* height: calc(100vh - constant(safe-area-inset-top));
-    height: calc(100vh - env(safe-area-inset-top)); */
     display: flex;
     flex-direction: column;
-    /* padding-top: 0.625rem;
-    padding-top: constant(safe-area-inset-top);
-    padding-top: env(safe-area-inset-top); */
 }
 .main {
     flex-grow: 1;
     flex-shrink: 1; 
-    overflow-y: scroll;
-    min-height: calc(100vh - 96px);
-    padding-top: 46px;
-    background: #f0f0f0; /*必须， 盖住路由切换时的页面*/
-    -webkit-overflow-scrolling: touch;
-    /* z-index: 0; */
+    overflow-y: auto; /**/
+    min-height: calc(100vh - 116px);
+    min-height: calc(100vh - 96px - constant(safe-area-inset-top)); 
+    min-height: calc(100vh - 96px - env(safe-area-inset-top));  /**/
+
+    padding-top: 66px;
+    padding-top: calc( constant(safe-area-inset-top) + 46px); /*20+46*/
+    padding-top: calc( env(safe-area-inset-top) + 46px);
+
+    padding-bottom: 50px; /* */
+    background: #f0f0f0; /*必须， 路由切换时盖住页面*/
+   -webkit-overflow-scrolling: touch; 
+    z-index: 1;  /* */
+    box-sizing: content-box;
 }
 
+.main-child{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 203;
+    background-color: #ebebeb;
+    overflow-y: auto;
+}
 
 @media(min-width:320px){html{ font-size: 1.71159rem;}}
 @media(min-width:360px){html{ font-size: 1.92554rem;}}
-@media(min-width:375px){html{ font-size: 2.2rem;}}
+@media(min-width:375px){html{ font-size: 2rem;}}
 @media(min-width:384px){html{ font-size: 2.05391rem;}}
 @media(min-width:412px){html{ font-size: 2.19833rem;}}
 @media(min-width:414px){html{ font-size: 2.21437rem;}}

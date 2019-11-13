@@ -1,28 +1,23 @@
 <template>
-  <div class="main">
-    <base-header
-      title="购物车"
-      :left-arrow="true"
-      left-link="/user"
-    >
-      <div slot="left"> <van-icon name="close" /> </div> 
-      <div slot="right"> <van-icon name="close" /> </div> 
+  <div class="main pdb-50">
+    <base-header title="购物车" :left-arrow="true" left-link="/user">
+      <div slot="left">
+        <van-icon name="close" />
+      </div>
+      <div slot="right">
+        <van-icon name="close" />
+      </div>
     </base-header>
 
     <van-checkbox-group class="card-goods" v-model="checkedGoods">
-      <van-checkbox
-        class="card-goods__item"
-        v-for="item in goods"
-        :key="item.id"
-        :name="item.id"
-      >
+      <van-checkbox class="card-goods__item" v-for="item in goods" :key="item.id" :name="item.id">
         <van-card
           :title="item.title"
           :desc="item.desc"
           :num="item.num"
           :price="formatPrice(item.price)"
           :thumb="item.thumb"
-        >  </van-card>
+        ></van-card>
       </van-checkbox>
     </van-checkbox-group>
 
@@ -36,7 +31,7 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, Card, SubmitBar,Icon, Toast } from 'vant';
+import { Checkbox, CheckboxGroup, Card, SubmitBar, Icon, Toast } from "vant";
 export default {
   components: {
     [Card.name]: Card,
@@ -47,38 +42,49 @@ export default {
   },
   data() {
     return {
-      checkedGoods: ['1', '2'],
-      goods: [{
-        id: '1',
-        title: '进口香蕉',
-        desc: '约250g，2根',
-        price: 200,
-        num: 1,
-        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg'
-      }, {
-        id: '2',
-        title: '进口香蕉',
-        desc: '约250g，2根',
-        price: 200,
-        num: 1,
-        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg'
-      }, {
-        id: '3',
-        title: '进口香蕉',
-        desc: '约250g，2根',
-        price: 200,
-        num: 1,
-        thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg'
-      }]
+      checkedGoods: ["1", "2"],
+      goods: [
+        {
+          id: "1",
+          title: "进口香蕉",
+          desc: "约250g，2根",
+          price: 200,
+          num: 1,
+          thumb:
+            "https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg"
+        },
+        {
+          id: "2",
+          title: "进口香蕉",
+          desc: "约250g，2根",
+          price: 200,
+          num: 1,
+          thumb:
+            "https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg"
+        },
+        {
+          id: "3",
+          title: "进口香蕉",
+          desc: "约250g，2根",
+          price: 200,
+          num: 1,
+          thumb:
+            "https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg"
+        }
+      ]
     };
   },
   computed: {
     submitBarText() {
       const count = this.checkedGoods.length;
-      return '结算' + (count ? `(${count})` : '');
+      return "结算" + (count ? `(${count})` : "");
     },
     totalPrice() {
-      return this.goods.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0);
+      return this.goods.reduce(
+        (total, item) =>
+          total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0),
+        0
+      );
     }
   },
   methods: {
@@ -86,7 +92,7 @@ export default {
       return (price / 100).toFixed(2);
     },
     onSubmit() {
-      Toast('点击结算');
+      Toast("点击结算");
     }
   }
 };

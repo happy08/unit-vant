@@ -283,11 +283,13 @@ var unit = {
 
     /**
      * @description 回到顶部
-     */
-    toTop() {    
+    * @param delay =0或者1 无动画
+    */
+    toTop(delay=5) {
+        delay=delay<=0?1:delay
         let timer = setInterval(() => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            let ispeed = Math.floor(-scrollTop / 5);
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            let ispeed = Math.floor(-scrollTop / delay);
             document.documentElement.scrollTop = document.body.scrollTop = scrollTop + ispeed;
             if(scrollTop === 0) {
                 clearInterval(timer);

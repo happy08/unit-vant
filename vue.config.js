@@ -1,5 +1,6 @@
+
 module.exports = {
-    publicPath:'./',
+    publicPath: './',
     //axios跨域代理
     devServer: {
         proxy: {
@@ -13,4 +14,5 @@ module.exports = {
             }
         }
     }
+
 }
