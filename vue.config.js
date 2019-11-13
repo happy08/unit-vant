@@ -1,6 +1,6 @@
 module.exports = {
     publicPath:'./',
-    //axios跨域代理-
+    //axios跨域代理--
     devServer: {
         proxy: {
             '/api': {
