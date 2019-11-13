@@ -5,7 +5,10 @@ import store from '@/store/index';
 import { Toast } from 'vant';
 
 // 创建axios实例
-let instance = axios.create({ timeout: 8000 });
+let instance = axios.create({
+  timeout: 8000,
+  //withCredentials: true,  // 设置 withCredentials 使请求带上 `cookies`
+});
 instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
 const tip = (msg, duration = 2000) => {
