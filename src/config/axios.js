@@ -60,6 +60,7 @@ const errorHandle = (status) => {
  * 请求拦截器 
  * 每次请求前，如果存在token则在请求头中携带token 
  */
+window.__axiosPromiseArr = []
 instance.interceptors.request.use(
   config => {
     const token = store.state.token
@@ -69,6 +70,10 @@ instance.interceptors.request.use(
     // 后台加上跨域和放开Authorization权限
     // token && (config.headers['Authorization'] = token)
     token && (config.headers.token = token)
+    config.cancelToken = new axios.CancelToken(cancel => {
+      //取消请求存在全局，切换路由时执行
+      window.__axiosPromiseArr.push({ cancel })
+    })
     return config;
   },
   error => Promise.error(error)
@@ -89,7 +94,9 @@ instance.interceptors.response.use(
     } else {
       // 处理断网的情况
       //console.log('error',error);
-      tip('网络异常');
+      if (window.__axiosPromiseArr.length !== 0) { //非用户取消
+        tip('网络异常');
+      }
     }
   });
 

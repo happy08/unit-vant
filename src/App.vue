@@ -68,7 +68,7 @@ export default {
 .slide-left-enter-active,
 .slide-left-leave-active {
   will-change: transform;
-  transition: transform 5000ms;
+  transition: transform 300ms;
   transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1); //ease-out;
   position: fixed;
   top: 0;

@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios'
-import http from '@/config/axios'
 
 Vue.use(VueRouter)
 
@@ -79,6 +77,7 @@ const routes = [
   },
 ]
 
+
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
@@ -97,6 +96,16 @@ const router = new VueRouter({
   //     return { x: 0, y: 300 }
   //   }
   // }
+})
+
+
+router.beforeEach((to, from, next) => {
+  //切换路由，取消上个页面所有请求
+  window.__axiosPromiseArr.forEach((ele, index) => {
+    ele.cancel()
+    window.__axiosPromiseArr.shift()
+  })
+  next()
 })
 
 
