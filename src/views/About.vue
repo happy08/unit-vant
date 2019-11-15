@@ -19,26 +19,7 @@
         placeholder="请输入手机号"
       />
     </van-cell-group>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />1
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />2
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />3
+ 
     <van-field
       v-model="phone"
       v-validate="'mobile'"
@@ -51,7 +32,7 @@
 </template>
 
 <script>
-import "@/config/validate";
+import "@/unit/validate";
 import { NavBar, Field, cellGroup, Button } from "vant";
 
 export default {

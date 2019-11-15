@@ -113,7 +113,7 @@
 
 <script>
 //http://vee-validate.logaretm.com/v2/guide/
-import "@/config/validate";
+import "@/unit/validate";
 import { Field, cellGroup, Button, Toast } from "vant";
 
 export default {

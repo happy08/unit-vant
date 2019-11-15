@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import { MixinRefresh } from "../assets/js/mixin";
+//import { MixinRefresh } from "../assets/js/mixin";
 import { Row, Col, Icon, Cell, CellGroup } from "vant";
 export default {
-  mixins: [MixinRefresh],
+  //mixins: [MixinRefresh],
 
   data() {
     return {

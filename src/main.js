@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import '@/assets/css/public.css';
 import api from './api' // 导入api接口
-import unit from './config/unit' // 
+import unit from './unit/unit' // 
 //import './config/rem'
 
 

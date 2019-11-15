@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import "@/config/validate";
+import "@/unit/validate";
 import { Tab, Tabs } from "vant";
 import LoadData from "@/components/LoadData";
 
