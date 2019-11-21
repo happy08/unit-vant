@@ -49,14 +49,14 @@ const routes = [
 
     }
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
-  //   meta: {
-  //     index: 1
-  //   }
-  // },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+    meta: {
+      index: 1
+    }
+  },
   {
     path: '/user',
     name: 'user',

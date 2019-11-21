@@ -36,7 +36,7 @@ export default {
         this.transition = "slide-right";
       }
 
-      //判断是否显示tabbar
+      //判断是否显示tabbar 以下path显示tabbar
       if (
         to.path == "/" ||
         to.path == "/index" ||
@@ -69,7 +69,7 @@ export default {
 .slide-left-leave-active {
   will-change: transform;
   transition: transform 300ms;
-  transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1); //ease-out;
+  transition-timing-function: ease-out; //ease-out; cubic-bezier(0.1, 0.2, 0.3, 1)
   position: fixed;
   top: 0;
   left: 0;

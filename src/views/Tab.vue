@@ -53,7 +53,7 @@ export default {
       return this.$api.list(page);
     },
     setData(res, refresh) {
-      console.log("res", res);
+      //console.log("res", res);
       if (refresh) {
         //下拉刷新
         this.list = res.data;

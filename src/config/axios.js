@@ -71,8 +71,8 @@ instance.interceptors.request.use(
     // 但是即使token存在，也有可能token是过期的，所以在每次的请求头中携带token        
     // 后台根据携带的token判断用户的登录情况，并返回给我们对应的状态码        
     // 后台加上跨域和放开Authorization权限
-    // token && (config.headers['Authorization'] = token)
-    token && (config.headers.token = token)
+    token && (config.headers['Authorization'] = token)
+    // token && (config.headers.token = token)
     config.cancelToken = new axios.CancelToken(cancel => {
       //取消请求存在全局，切换路由时执行
       window.__axiosPromiseArr.push({ cancel })
